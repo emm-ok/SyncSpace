@@ -83,352 +83,6 @@ function SignUpPage() {
             >
               <div
                 className="
-                  flex
-                  items-center
-                  justify-center
-                  p-8
-                  lg:border-r
-                  lg:border-white/10
-                "
-              >
-                <div className="w-full max-w-md">
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      x: -30,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.3,
-                    }}
-                    className="w-full max-w-md"
-                  >
-                    <div className="mb-10 text-center">
-                      <motion.div
-                        initial={{
-                          scale: 0,
-                        }}
-                        animate={{
-                          scale: 1,
-                        }}
-                        transition={{
-                          delay: 0.4,
-                          type: "spring",
-                        }}
-                        className="
-        mx-auto
-        mb-6
-        flex
-        h-16
-        w-16
-        items-center
-        justify-center
-        rounded-2xl
-        bg-gradient-to-br
-        from-cyan-400
-        to-blue-600
-        shadow-lg
-        shadow-cyan-500/30
-      "
-                      >
-                        <MessageCircleIcon
-                          className="h-8 w-8 text-white"
-                        />
-                      </motion.div>
-
-                      <h1
-                        className="
-        text-3xl
-        font-bold
-        tracking-tight
-        text-white
-      "
-                      >
-                        Welcome Back
-                      </h1>
-
-                      <p
-                        className="
-        mt-3
-        text-sm
-        text-slate-400
-      "
-                      >
-                        Sign in to continue managing your account
-                      </p>
-                    </div>
-
-                    <form
-                      onSubmit={handleSubmit}
-                      className="space-y-6"
-                    >
-                      <div>
-                        <label
-                          className="
-          mb-2
-          block
-          text-sm
-          font-medium
-          text-slate-300
-        "
-                        >
-                          Full Name
-                        </label>
-
-                        <div className="relative">
-                          <User
-                            className="
-            absolute
-            left-4
-            top-1/2
-            h-5
-            w-5
-            -translate-y-1/2
-            text-slate-500
-          "
-                          />
-
-                          <input
-                            type="text"
-                            value={formData.fullName}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                fullName: e.target.value,
-                              })
-                            }
-                            placeholder="john@example.com"
-                            className="
-            h-14
-            w-full
-            rounded-xl
-            border
-            border-white/10
-            bg-white/5
-            pl-12
-            pr-4
-            text-white
-            outline-none
-            transition
-            placeholder:text-slate-500
-            focus:border-cyan-400
-            focus:bg-white/10
-          "
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          className="
-          mb-2
-          block
-          text-sm
-          font-medium
-          text-slate-300
-        "
-                        >
-                          Email Address
-                        </label>
-
-                        <div className="relative">
-                          <MailIcon
-                            className="
-            absolute
-            left-4
-            top-1/2
-            h-5
-            w-5
-            -translate-y-1/2
-            text-slate-500
-          "
-                          />
-
-                          <input
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                email: e.target.value,
-                              })
-                            }
-                            placeholder="john@example.com"
-                            className="
-            h-14
-            w-full
-            rounded-xl
-            border
-            border-white/10
-            bg-white/5
-            pl-12
-            pr-4
-            text-white
-            outline-none
-            transition
-            placeholder:text-slate-500
-            focus:border-cyan-400
-            focus:bg-white/10
-          "
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label
-                          className="
-          mb-2
-          block
-          text-sm
-          font-medium
-          text-slate-300
-        "
-                        >
-                          Password
-                        </label>
-
-                        <div className="relative">
-                          <LockIcon
-                            className="
-            absolute
-            left-4
-            top-1/2
-            h-5
-            w-5
-            -translate-y-1/2
-            text-slate-500
-          "
-                          />
-
-                          <input
-                            type={
-                              showPassword
-                                ? "text"
-                                : "password"
-                            }
-                            value={formData.password}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                password: e.target.value,
-                              })
-                            }
-                            placeholder="Enter your password"
-                            className="
-            h-14
-            w-full
-            rounded-xl
-            border
-            border-white/10
-            bg-white/5
-            pl-12
-            pr-12
-            text-white
-            outline-none
-            transition
-            placeholder:text-slate-500
-            focus:border-cyan-400
-            focus:bg-white/10
-          "
-                          />
-
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setShowPassword(!showPassword)
-                            }
-                            className="
-            absolute
-            right-4
-            top-1/2
-            -translate-y-1/2
-            text-slate-400
-            transition
-            hover:text-white
-          "
-                          >
-                            {showPassword ? (
-                              <EyeOffIcon className="h-5 w-5" />
-                            ) : (
-                              <EyeIcon className="h-5 w-5" />
-                            )}
-                          </button>
-                        </div>
-                      </div>
-
-                      <motion.button
-                        whileHover={{
-                          scale: 1.02,
-                        }}
-                        whileTap={{
-                          scale: 0.98,
-                        }}
-                        disabled={isSigningUp}
-                        type="submit"
-                        className="
-        flex
-        h-14
-        w-full
-        items-center
-        justify-center
-        rounded-xl
-        bg-gradient-to-r
-        from-cyan-500
-        to-blue-600
-        font-semibold
-        text-white
-        shadow-lg
-        shadow-cyan-500/20
-        transition
-        disabled:cursor-not-allowed
-        disabled:opacity-50
-      "
-                      >
-                        {isSigningUp ? (
-                          <LoaderIcon
-                            className="
-            h-6
-            w-6
-            animate-spin
-          "
-                          />
-                        ) : (
-                          "Sign In"
-                        )}
-                      </motion.button>
-                    </form>
-
-                    <div
-                      className="
-      mt-8
-      text-center
-      text-sm
-      text-slate-400
-    "
-                    >
-                       Already have an account? Login
-                      <Link
-                        to="/login"
-                        className="
-        ml-2
-        font-medium
-        text-cyan-400
-        transition
-        hover:text-cyan-300
-      "
-                      >
-                        Login
-                      </Link>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-
-              <div
-                className="
                   hidden
                   lg:flex
                   items-center
@@ -674,6 +328,352 @@ function SignUpPage() {
     "
                   />
                 </motion.div>
+              </div>
+
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  p-8
+                  lg:border-r
+                  lg:border-white/10
+                "
+              >
+                <div className="w-full max-w-md">
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      x: -30,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.3,
+                    }}
+                    className="w-full max-w-md"
+                  >
+                    <div className="mb-10 text-center">
+                      <motion.div
+                        initial={{
+                          scale: 0,
+                        }}
+                        animate={{
+                          scale: 1,
+                        }}
+                        transition={{
+                          delay: 0.4,
+                          type: "spring",
+                        }}
+                        className="
+        mx-auto
+        mb-6
+        flex
+        h-16
+        w-16
+        items-center
+        justify-center
+        rounded-2xl
+        bg-gradient-to-br
+        from-cyan-400
+        to-blue-600
+        shadow-lg
+        shadow-cyan-500/30
+      "
+                      >
+                        <MessageCircleIcon
+                          className="h-8 w-8 text-white"
+                        />
+                      </motion.div>
+
+                      <h1
+                        className="
+        text-3xl
+        font-bold
+        tracking-tight
+        text-white
+      "
+                      >
+                        Welcome Back
+                      </h1>
+
+                      <p
+                        className="
+        mt-3
+        text-sm
+        text-slate-400
+      "
+                      >
+                        Sign in to continue managing your account
+                      </p>
+                    </div>
+
+                    <form
+                      onSubmit={handleSubmit}
+                      className="space-y-6"
+                    >
+                      <div>
+                        <label
+                          className="
+          mb-2
+          block
+          text-sm
+          font-medium
+          text-slate-300
+        "
+                        >
+                          Full Name
+                        </label>
+
+                        <div className="relative">
+                          <User
+                            className="
+            absolute
+            left-4
+            top-1/2
+            h-5
+            w-5
+            -translate-y-1/2
+            text-slate-500
+          "
+                          />
+
+                          <input
+                            type="text"
+                            value={formData.fullName}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                fullName: e.target.value,
+                              })
+                            }
+                            placeholder="John Doe"
+                            className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-white/10
+            bg-white/5
+            pl-12
+            pr-4
+            text-white
+            outline-none
+            transition
+            placeholder:text-slate-500
+            focus:border-cyan-400
+            focus:bg-white/10
+          "
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label
+                          className="
+          mb-2
+          block
+          text-sm
+          font-medium
+          text-slate-300
+        "
+                        >
+                          Email Address
+                        </label>
+
+                        <div className="relative">
+                          <MailIcon
+                            className="
+            absolute
+            left-4
+            top-1/2
+            h-5
+            w-5
+            -translate-y-1/2
+            text-slate-500
+          "
+                          />
+
+                          <input
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                email: e.target.value,
+                              })
+                            }
+                            placeholder="john@example.com"
+                            className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-white/10
+            bg-white/5
+            pl-12
+            pr-4
+            text-white
+            outline-none
+            transition
+            placeholder:text-slate-500
+            focus:border-cyan-400
+            focus:bg-white/10
+          "
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          className="
+          mb-2
+          block
+          text-sm
+          font-medium
+          text-slate-300
+        "
+                        >
+                          Password
+                        </label>
+
+                        <div className="relative">
+                          <LockIcon
+                            className="
+            absolute
+            left-4
+            top-1/2
+            h-5
+            w-5
+            -translate-y-1/2
+            text-slate-500
+          "
+                          />
+
+                          <input
+                            type={
+                              showPassword
+                                ? "text"
+                                : "password"
+                            }
+                            value={formData.password}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                password: e.target.value,
+                              })
+                            }
+                            placeholder="Enter your password"
+                            className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-white/10
+            bg-white/5
+            pl-12
+            pr-12
+            text-white
+            outline-none
+            transition
+            placeholder:text-slate-500
+            focus:border-cyan-400
+            focus:bg-white/10
+          "
+                          />
+
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setShowPassword(!showPassword)
+                            }
+                            className="
+            absolute
+            right-4
+            top-1/2
+            -translate-y-1/2
+            text-slate-400
+            transition
+            hover:text-white
+          "
+                          >
+                            {showPassword ? (
+                              <EyeOffIcon className="h-5 w-5" />
+                            ) : (
+                              <EyeIcon className="h-5 w-5" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+
+                      <motion.button
+                        whileHover={{
+                          scale: 1.02,
+                        }}
+                        whileTap={{
+                          scale: 0.98,
+                        }}
+                        disabled={isSigningUp}
+                        type="submit"
+                        className="
+        flex
+        h-14
+        w-full
+        items-center
+        justify-center
+        rounded-xl
+        bg-gradient-to-r
+        from-cyan-500
+        to-blue-600
+        font-semibold
+        text-white
+        shadow-lg
+        shadow-cyan-500/20
+        transition
+        disabled:cursor-not-allowed
+        disabled:opacity-50
+      "
+                      >
+                        {isSigningUp ? (
+                          <LoaderIcon
+                            className="
+            h-6
+            w-6
+            animate-spin
+          "
+                          />
+                        ) : (
+                          "Sign In"
+                        )}
+                      </motion.button>
+                    </form>
+
+                    <div
+                      className="
+      mt-8
+      text-center
+      text-sm
+      text-slate-400
+    "
+                    >
+                       Already have an account? Login
+                      <Link
+                        to="/login"
+                        className="
+        ml-2
+        font-medium
+        text-cyan-400
+        transition
+        hover:text-cyan-300
+      "
+                      >
+                        Login
+                      </Link>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </motion.section>

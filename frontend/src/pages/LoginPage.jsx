@@ -86,6 +86,255 @@ function LoginPage() {
             >
               <div
                 className="
+                  hidden
+                  lg:flex
+                  items-center
+                  justify-center
+                  relative
+                  overflow-hidden
+                  bg-gradient-to-br
+                  from-white/5
+                  to-transparent
+                  p-10
+                "
+              >
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    x: 40,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.4,
+                  }}
+                  className="
+    relative
+    hidden
+    overflow-hidden
+    bg-gradient-to-br
+    from-cyan-500/5
+    via-transparent
+    to-blue-600/10
+    p-10
+    lg:flex
+    lg:flex-col
+    lg:items-center
+    lg:justify-center
+  "
+                >
+                  <motion.div
+                    animate={{
+                      y: [0, -15, 0],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="
+      relative
+      z-10
+      flex
+      w-full
+      max-w-lg
+      justify-center
+    "
+                  >
+                    <div
+                      className="
+        absolute
+        inset-0
+        rounded-full
+        bg-cyan-500/20
+        blur-3xl
+      "
+                    />
+
+                    <img
+                      src="/img3.jpg"
+                      alt="People connecting online"
+                      className="
+        relative
+        z-10
+        w-full
+        max-w-md
+        object-contain
+        drop-shadow-2xl
+      "
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.7,
+                      duration: 0.5,
+                    }}
+                    className="
+      relative
+      z-10
+      mt-10
+      text-center
+    "
+                  >
+                    <h2
+                      className="
+        text-3xl
+        font-bold
+        tracking-tight
+        text-white
+      "
+                    >
+                      Connect Anytime,
+                      <span
+                        className="
+          block
+          bg-gradient-to-r
+          from-cyan-400
+          to-blue-500
+          bg-clip-text
+          text-transparent
+        "
+                      >
+                        Anywhere
+                      </span>
+                    </h2>
+
+                    <p
+                      className="
+        mx-auto
+        mt-4
+        max-w-sm
+        text-sm
+        leading-6
+        text-slate-400
+      "
+                    >
+                      Secure conversations, seamless collaboration,
+                      and a smarter way to stay connected with your
+                      community.
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      scale: 0.8,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    transition={{
+                      delay: 0.9,
+                      duration: 0.5,
+                    }}
+                    className="
+      relative
+      z-10
+      mt-8
+      flex
+      flex-wrap
+      justify-center
+      gap-3
+    "
+                  >
+                    {[
+                      "Secure",
+                      "Fast Setup",
+                      "Private",
+                    ].map((item, index) => (
+                      <motion.div
+                        key={item}
+                        initial={{
+                          opacity: 0,
+                          y: 10,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          delay: 1 + index * 0.15,
+                        }}
+                        whileHover={{
+                          scale: 1.05,
+                        }}
+                        className="
+          rounded-full
+          border
+          border-white/10
+          bg-white/5
+          px-5
+          py-2
+          text-sm
+          font-medium
+          text-slate-300
+          backdrop-blur-md
+        "
+                      >
+                        {item}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  <motion.div
+                    animate={{
+                      rotate: 360,
+                    }}
+                    transition={{
+                      duration: 25,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className="
+      absolute
+      right-10
+      top-10
+      h-32
+      w-32
+      rounded-full
+      border
+      border-cyan-400/20
+    "
+                  />
+
+                  <motion.div
+                    animate={{
+                      rotate: -360,
+                    }}
+                    transition={{
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className="
+      absolute
+      bottom-10
+      left-10
+      h-48
+      w-48
+      rounded-full
+      border
+      border-blue-500/20
+    "
+                  />
+                </motion.div>
+              </div>
+              
+              <div
+                className="
                   flex
                   items-center
                   justify-center
@@ -373,255 +622,6 @@ function LoginPage() {
                     </div>
                   </motion.div>
                 </div>
-              </div>
-
-              <div
-                className="
-                  hidden
-                  lg:flex
-                  items-center
-                  justify-center
-                  relative
-                  overflow-hidden
-                  bg-gradient-to-br
-                  from-white/5
-                  to-transparent
-                  p-10
-                "
-              >
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: 40,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.4,
-                  }}
-                  className="
-    relative
-    hidden
-    overflow-hidden
-    bg-gradient-to-br
-    from-cyan-500/5
-    via-transparent
-    to-blue-600/10
-    p-10
-    lg:flex
-    lg:flex-col
-    lg:items-center
-    lg:justify-center
-  "
-                >
-                  <motion.div
-                    animate={{
-                      y: [0, -15, 0],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-      relative
-      z-10
-      flex
-      w-full
-      max-w-lg
-      justify-center
-    "
-                  >
-                    <div
-                      className="
-        absolute
-        inset-0
-        rounded-full
-        bg-cyan-500/20
-        blur-3xl
-      "
-                    />
-
-                    <img
-                      src="/img3.jpg"
-                      alt="People connecting online"
-                      className="
-        relative
-        z-10
-        w-full
-        max-w-md
-        object-contain
-        drop-shadow-2xl
-      "
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      y: 20,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      delay: 0.7,
-                      duration: 0.5,
-                    }}
-                    className="
-      relative
-      z-10
-      mt-10
-      text-center
-    "
-                  >
-                    <h2
-                      className="
-        text-3xl
-        font-bold
-        tracking-tight
-        text-white
-      "
-                    >
-                      Connect Anytime,
-                      <span
-                        className="
-          block
-          bg-gradient-to-r
-          from-cyan-400
-          to-blue-500
-          bg-clip-text
-          text-transparent
-        "
-                      >
-                        Anywhere
-                      </span>
-                    </h2>
-
-                    <p
-                      className="
-        mx-auto
-        mt-4
-        max-w-sm
-        text-sm
-        leading-6
-        text-slate-400
-      "
-                    >
-                      Secure conversations, seamless collaboration,
-                      and a smarter way to stay connected with your
-                      community.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      scale: 0.8,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      scale: 1,
-                    }}
-                    transition={{
-                      delay: 0.9,
-                      duration: 0.5,
-                    }}
-                    className="
-      relative
-      z-10
-      mt-8
-      flex
-      flex-wrap
-      justify-center
-      gap-3
-    "
-                  >
-                    {[
-                      "Secure",
-                      "Fast Setup",
-                      "Private",
-                    ].map((item, index) => (
-                      <motion.div
-                        key={item}
-                        initial={{
-                          opacity: 0,
-                          y: 10,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          delay: 1 + index * 0.15,
-                        }}
-                        whileHover={{
-                          scale: 1.05,
-                        }}
-                        className="
-          rounded-full
-          border
-          border-white/10
-          bg-white/5
-          px-5
-          py-2
-          text-sm
-          font-medium
-          text-slate-300
-          backdrop-blur-md
-        "
-                      >
-                        {item}
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    animate={{
-                      rotate: 360,
-                    }}
-                    transition={{
-                      duration: 25,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    className="
-      absolute
-      right-10
-      top-10
-      h-32
-      w-32
-      rounded-full
-      border
-      border-cyan-400/20
-    "
-                  />
-
-                  <motion.div
-                    animate={{
-                      rotate: -360,
-                    }}
-                    transition={{
-                      duration: 30,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    className="
-      absolute
-      bottom-10
-      left-10
-      h-48
-      w-48
-      rounded-full
-      border
-      border-blue-500/20
-    "
-                  />
-                </motion.div>
               </div>
             </div>
           </motion.section>
